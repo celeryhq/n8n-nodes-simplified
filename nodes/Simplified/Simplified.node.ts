@@ -6,7 +6,6 @@ import {
 	INodeType,
 	INodeTypeDescription,
 	INode,
-	LoggerProxy as Logger,
 } from 'n8n-workflow';
 
 import { simplifiedApiRequest } from './GenericFunctions';
@@ -174,11 +173,11 @@ export class Simplified implements INodeType {
 							media: media,
 							additional: additional
 						};
-						Logger.debug(JSON.stringify({ "payload": payload }));
+						this.logger.debug(JSON.stringify({ "payload": payload }));
 
 						responseData = await simplifiedApiRequest.call(this, 'POST', '/api/v1/service/social-media/create', payload);
 
-						Logger.debug(responseData);
+						this.logger.debug(responseData);
 
 					}
 				}

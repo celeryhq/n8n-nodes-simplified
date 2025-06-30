@@ -7,6 +7,9 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/celeryhq/n8n-nodes-simplified",
+  "bugs": {
+    "url": "https://github.com/celeryhq/n8n-nodes-simplified/issues"
+  },
   "author": {
     "name": "Jack Dobrowolski",
     "email": "jack@simplified.com"
