@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-simplified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "n8n nodes for Simplified automation.",
   "keywords": [
     "n8n-community-node-package"
@@ -36,7 +36,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/Simplified.credentials.js"   
+      "dist/credentials/Simplified.credentials.js"
     ],
     "nodes": [
       "dist/nodes/Simplified/Simplified.node.js"
