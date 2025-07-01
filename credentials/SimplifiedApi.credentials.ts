@@ -1,5 +1,6 @@
 import {
 	IAuthenticateGeneric,
+	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -32,9 +33,16 @@ export class SimplifiedApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				'Authorization': 'Api-Key ={{$credentials.apiKey}}',
+				'Authorization': '={{"Api-Key " + $credentials.apiKey}}',
 			},
 		},
 	};
 
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: '={{$credentials.url}}',
+			url: '/api/v1/service/social-media/get-accounts',
+			method: 'GET',
+		},
+	};
 }
