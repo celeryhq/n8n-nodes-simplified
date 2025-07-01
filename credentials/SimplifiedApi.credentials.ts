@@ -6,7 +6,7 @@ import {
 
 export class SimplifiedApi implements ICredentialType {
 	name = 'simplifiedApi';
-	displayName = 'Simplified Credentials API';
+	displayName = 'Simplified API';
 
 	documentationUrl = 'https://simplified.readme.io/reference/authentication';
 

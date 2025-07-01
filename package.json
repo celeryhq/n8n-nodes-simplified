@@ -36,7 +36,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/Simplified.credentials.js"
+      "dist/credentials/SimplifiedApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/Simplified/Simplified.node.js"
