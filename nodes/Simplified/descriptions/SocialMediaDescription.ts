@@ -76,7 +76,7 @@ export const socialMediaFields: INodeProperties[] = [
         },
         type: 'options',
         options: [
-             {
+            {
                 name: 'Bluesky',
                 value: 'bluesky',
             },
@@ -84,7 +84,7 @@ export const socialMediaFields: INodeProperties[] = [
                 name: 'Facebook',
                 value: 'facebook',
             },
-              {
+            {
                 name: 'Google Profile',
                 value: 'google',
             },
@@ -96,7 +96,7 @@ export const socialMediaFields: INodeProperties[] = [
                 name: 'LinkedIn',
                 value: 'linkedin',
             },
-          
+
             {
                 name: 'Pinterest',
                 value: 'pinterest',
@@ -105,12 +105,12 @@ export const socialMediaFields: INodeProperties[] = [
                 name: 'Threads',
                 value: 'threads',
             },
-         
+
             {
                 name: 'Tiktok (Business)',
                 value: 'tiktokBusiness',
             },
-               {
+            {
                 name: 'Tiktok (Personal)',
                 value: 'tiktok',
             },
@@ -119,7 +119,7 @@ export const socialMediaFields: INodeProperties[] = [
                 value: 'youtube',
             },
 
-           
+
         ],
         default: 'facebook',
         required: true,
@@ -184,6 +184,12 @@ export const socialMediaFields: INodeProperties[] = [
         typeOptions: {
             multipleValues: true,
         },
+        displayOptions: {
+            show: {
+                operation: ['createPost'],
+                resource: ['social-media'],
+            },
+        },
         options: [
             {
                 name: 'mediaItem',
@@ -209,6 +215,7 @@ export const socialMediaFields: INodeProperties[] = [
         default: {},
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['google'],
             },
         },
@@ -236,14 +243,14 @@ export const socialMediaFields: INodeProperties[] = [
                         default: '',
                         description: 'Type of call to action for the post',
                     },
-                     {
+                    {
                         displayName: 'Call to Action URL',
                         name: 'callToActionUrl',
                         type: 'string',
                         default: '',
                         description: 'URL for the call to action button',
                     },
-                     {
+                    {
                         displayName: 'Coupon Code',
                         name: 'couponCode',
                         type: 'string',
@@ -262,7 +269,7 @@ export const socialMediaFields: INodeProperties[] = [
                         default: '',
                         description: 'The end date of the Google My Business post (e.g., event or offer)',
                     },
-                   
+
                     {
                         displayName: 'Redeem Online URL',
                         name: 'redeemOnlineUrl',
@@ -275,7 +282,7 @@ export const socialMediaFields: INodeProperties[] = [
                             },
                         },
                     },
-                     {
+                    {
                         displayName: 'Start Date',
                         name: 'startDate',
                         type: 'dateTime',
@@ -293,14 +300,14 @@ export const socialMediaFields: INodeProperties[] = [
                                 topicType: ['OFFER'],
                             },
                         },
-                    },{
+                    }, {
                         displayName: 'Title',
                         name: 'title',
                         type: 'string',
                         default: '',
                         description: 'The title of the Google My Business post',
                     },
-                     {
+                    {
                         displayName: 'Topic Type',
                         name: 'topicType',
                         type: 'options',
@@ -312,7 +319,7 @@ export const socialMediaFields: INodeProperties[] = [
                         default: 'STANDARD',
                         description: 'The type of Google My Business post',
                     },
-                    
+
                 ],
             },
         ],
@@ -325,6 +332,7 @@ export const socialMediaFields: INodeProperties[] = [
         default: {},
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['tiktok'],
             },
         },
@@ -481,6 +489,7 @@ export const socialMediaFields: INodeProperties[] = [
         default: {},
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['threads'],
             },
         },
@@ -504,6 +513,7 @@ export const socialMediaFields: INodeProperties[] = [
         type: 'collection',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['youtube'],
             },
         },
@@ -580,6 +590,7 @@ export const socialMediaFields: INodeProperties[] = [
         name: 'facebook',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['facebook'],
             },
         },
@@ -607,6 +618,7 @@ export const socialMediaFields: INodeProperties[] = [
         type: 'collection',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['linkedin'],
             },
         },
@@ -633,6 +645,7 @@ export const socialMediaFields: INodeProperties[] = [
         type: 'collection',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['instagram'],
             },
         },
@@ -681,6 +694,7 @@ export const socialMediaFields: INodeProperties[] = [
         type: 'collection',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['pinterest'],
             },
         },
@@ -724,6 +738,7 @@ export const socialMediaFields: INodeProperties[] = [
         type: 'collection',
         displayOptions: {
             show: {
+                operation: ['createPost'],
                 network: ['tiktokBusiness'],
             },
         },

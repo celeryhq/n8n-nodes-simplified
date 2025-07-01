@@ -32,7 +32,7 @@ export class SimplifiedApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				'Authorization': 'Api-Key ={{$credentials.apiToken}}',
+				'Authorization': 'Api-Key ={{$credentials.apiKey}}',
 			},
 		},
 	};
