@@ -5,8 +5,8 @@ import type {
 	IHookFunctions,
 	IWebhookFunctions,
 	JsonObject,
-	IRequestOptions,
 	IHttpRequestMethods,
+	IHttpRequestOptions,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
@@ -20,19 +20,13 @@ export async function simplifiedApiRequest(
 	option: IDataObject = {},
 ): Promise<any> {
 	const credentials = await this.getCredentials('simplifiedApi');
-
-	const apiKey = `${credentials.apiKey}`;
 	const baseUrl = `${credentials.url}`;
 
-	let options: IRequestOptions = {
-		headers: {
-			'Content-Type': 'application/json',
-			Authorization: `Api-Key ${apiKey}`,
-		},
+	let options: IHttpRequestOptions = {
 		method,
 		body,
 		qs: query,
-		uri: uri || `${baseUrl}${resource}`,
+		url: uri || `${baseUrl}${resource}`,
 		json: true,
 	};
 	if (Object.keys(body as IDataObject).length === 0) {
@@ -43,7 +37,11 @@ export async function simplifiedApiRequest(
 	}
 	options = { ...options, ...option };
 	try {
-		return await this.helpers.request(options);
+		return await this.helpers.httpRequestWithAuthentication.call(
+			this,
+			'simplifiedApi',
+			options,
+		);
 	} catch (error: any) {
 		throw new NodeApiError(this.getNode(), error as JsonObject);
 	}

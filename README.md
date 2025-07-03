@@ -18,7 +18,13 @@ This is an n8n community node. It lets you use **Simplified** in your n8n workfl
 
 ## Installation
 
-Install the node from npm:
+Option 1: Install via n8n UI
+1. Go to Settings > Community Nodes
+2. Click on Install
+3. Enter n8n-nodes-simplified in the npm Package Name field
+4. Click on Install
+
+Option 2: Install the node from npm:
 
 ```bash
 npm install n8n-nodes-simplified
